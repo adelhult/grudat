@@ -1,0 +1,66 @@
+.Tile {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    font-size: 1rem;
+    padding:0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: appear 0.4s;
+    position: relative;
+    transition: filter 0.3s;
+    transition: transform 0.3s;
+    user-select: none;
+}
+
+.Tile > .op-code {
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end:1;
+}
+
+.Tile > .short-hand {
+    font-weight: bold;
+    font-size:1.1rem;
+    justify-self:center;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end:2;
+    align-self: center;
+}
+
+.Tile > .method {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end:3;
+    align-self: flex-end;
+}
+
+.Tile > .cycles {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end:1;
+    justify-self: end;
+}
+
+.Tile > .bytes {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end:3;
+    justify-self: end;
+    align-self: flex-end;
+}
+
+.Tile:hover {
+    filter:brightness(1.2);
+}
+
+.Tile:active {
+    transform: scale(1.1);
+}

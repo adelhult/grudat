@@ -1,0 +1,20 @@
+{
+  "short_name": "FLISP",
+  "name": "FLISP",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#6A4DE3",
+  "background_color": "#F1F1F1",
+  "icons": [
+    {
+      "src": "icon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

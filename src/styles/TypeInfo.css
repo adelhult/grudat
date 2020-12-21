@@ -1,0 +1,44 @@
+.TypeInfo {
+    position: relative;
+    width:100%;
+    margin-bottom:1rem;
+    margin-top:1rem;
+    animation: appear 0.3s;
+    background:white;
+    color:black;
+    padding:1rem;
+    border-radius:5px;
+}
+
+.TypeInfo .subHeading {
+    position: relative;
+    margin-top:1rem;
+    display: block;
+}
+
+
+.TypeInfo .tableWrapper {
+    width:100%;
+    overflow-x:auto;
+}
+
+.TypeInfo th, td, table {
+    border:solid;
+    border-width: 1px;
+    border-color:rgb(221, 221, 221);
+    border-collapse: collapse;
+    padding:0.5rem;
+    transition: all 0.5s;
+}
+
+.TypeInfo tr:nth-child(odd) {
+    background-color: rgb(235, 235, 235);
+}
+
+.TypeInfo td {
+    min-width:50px;
+}
+
+.TypeInfo p {
+    max-width:650px;
+}
