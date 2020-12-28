@@ -1,11 +1,15 @@
+import { useState } from "react";
 import "./styles/App.css";
 import Operations from "./Operations.jsx";
 import Frame from "./Frame.jsx";
 import Numbers from "./Numbers.jsx";
 import operations from "./operations_data.js";
 import types from "./types_data.js";
+import ControlFlow from "./ControlFlow.jsx";
 
 function App() {
+  const [selected, setSelected] = useState();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -30,17 +34,25 @@ function App() {
         src="alu_functions.png"
         additional="alu_functions_more.png"
       />
+
       <h2>Styrsignaler för väljarfunktioner</h2>
-      <Frame
-        src="multiplexers.png"
-      />
+      <Frame src="multiplexers.png"/>
+
       <h2>Assemblerdirektiv</h2>
       <Frame
         src="assembler.png"
         additional="assembler_more.png"
       />
-      <h2>Operationer</h2>
+      
+      <h2>Villkorliga programflödesändringar</h2>
+      <ControlFlow
+        setSelected={setSelected}
+      />
+
+      <h2 id="Operations">Operationer</h2>
       <Operations 
+        selected={selected}
+        setSelected={setSelected}
         operations={operations}
         types={types}
       />

@@ -1,0 +1,35 @@
+.ControlFlow {
+    margin-top:1rem;
+    padding:1rem;
+    background:white;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.185);
+    border-radius:5px;
+    transition: all 0.3s;
+    cursor:pointer;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.ControlFlow table{
+    background:white;
+    min-width: 600px;
+    width:100%;
+}
+
+.ControlFlow th, td, table {
+    border:solid;
+    border-width: 1px;
+    border-color:rgb(221, 221, 221);
+    border-collapse: collapse;
+    padding:0.5rem;
+    transition: all 0.5s;
+}
+
+.ControlFlow .name:hover {
+    background:#6842CF;
+    color: white;
+}
+
+.ControlFlow tr:nth-child(odd) {
+    background-color: rgb(235, 235, 235);
+}

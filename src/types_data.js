@@ -57,13 +57,13 @@ const types = [
         "type": "BGE",
         "name": "Branch on greater than or equal to zero",
         "flagInfo": "Påverkas ej",
-        "description": "Testar värdet hos Booleska uttrycket NV. Om NV =0 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnet. Om NV =1 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
+        "description": "Testar värdet hos Booleska uttrycket N xor V. Om N xor V =0 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnet. Om N xor V =1 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
     },
     {
         "type": "BGT",
         "name": "Branch on greater than zero",
         "flagInfo": "Påverkas ej",
-        "description": "Testar värdet hos Booleska uttrycket (NV)+Z. Om (NV)+Z = 0 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnet. Om (NV)+Z =1 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
+        "description": "Testar värdet hos Booleska uttrycket (N xor V)+Z. Om (N xor V)+Z = 0 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnet. Om (N xor V)+Z =1 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
     },
     {
         "type": "BHI",
@@ -87,7 +87,7 @@ const types = [
         "type": "BLE",
         "name": "Branch on less than or equal to zero",
         "flagInfo": "Påverkas ej",
-        "description": "Testar värdet hos Booleska uttrycket (N xor V)+Z. Om (N xor V)+Z = 1 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnet. Om (NV)+Z = 0 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
+        "description": "Testar värdet hos Booleska uttrycket (N xor V)+Z. Om (N xor V)+Z = 1 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnet. Om (N xor V)+Z = 0 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
     },
     {
         "type": "BLO",
@@ -105,7 +105,7 @@ const types = [
         "type": "BLT",
         "name": "Branch on less than zero",
         "flagInfo": "Påverkas ej",
-        "description": "Testar värdet hos Booleska uttrycket NV. Om NV = 1 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnetOm NV = 0 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
+        "description": "Testar värdet hos Booleska uttrycket N xor V. Om N xor V = 1 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnetOm N xor V = 0 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
     },
     {
         "type": "BMI",

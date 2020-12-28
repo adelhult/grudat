@@ -9,7 +9,6 @@ export default function Operations(props) {
   const [query, setQuery] = useState("");
   const [isMapMode, setMode] = useState(true);
   const [sortingMethod, setSortingMethod] = useState("code");
-  const [selected, setSelected] = useState();
 
   // generate a tile
   const genTiles = data => {
@@ -39,7 +38,7 @@ export default function Operations(props) {
           bytes={op.bytes}
           cycles={op.cycles}
           type={op.type}
-          select={setSelected}
+          select={props.setSelected}
         />
       </AnchorLink>
     });
@@ -121,7 +120,7 @@ export default function Operations(props) {
           className="switch"
           onClick={() => {
             setMode(!isMapMode);
-            setSelected("");
+            props.setSelected("");
           }}
         >
           {
@@ -154,10 +153,10 @@ export default function Operations(props) {
             >
               Sortera efter namn
               </button>
-            {selected && (
+            {props.selected && (
               <button
                 className="remove"
-                onClick={() => setSelected("")}>
+                onClick={() => props.setSelected("")}>
                 Avmarkera operationen
               </button>
             )}
@@ -167,8 +166,8 @@ export default function Operations(props) {
 
       <article className="selected" id="selected">
         {
-          selected ? <>
-            {genTypeInfo(selected)}
+          props.selected ? <>
+            {genTypeInfo(props.selected)}
           </>
             : ''
         }
