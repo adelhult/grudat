@@ -195,7 +195,7 @@ const operations = [
     "RTN": "A && M(n+Y) → A"
   },
   {
-    "code": 1,
+    "code": "01",
     "shortHand": "ANDCC   #Data",
     "method": "im",
     "bytes": 2,
@@ -689,7 +689,7 @@ const operations = [
     "RTN": "If (V = 1): PC+Offset → PC"
   },
   {
-    "code": 5,
+    "code": "05",
     "shortHand": "CLRA",
     "method": "in",
     "bytes": 1,
@@ -1040,7 +1040,7 @@ const operations = [
     "RTN": "M(A+Y) ' → M(A+Y)"
   },
   {
-    "code": 8,
+    "code": "08",
     "shortHand": "DECA",
     "method": "in",
     "bytes": 1,
@@ -1248,7 +1248,7 @@ const operations = [
     "RTN": "Y <-> SP"
   },
   {
-    "code": 7,
+    "code": "07",
     "shortHand": "INCA",
     "method": "in",
     "bytes": 1,
@@ -2132,7 +2132,7 @@ const operations = [
     "RTN": "M(A+Y)>>1 → M(A+Y)"
   },
   {
-    "code": 6,
+    "code": "06",
     "shortHand": "NEGA",
     "method": "in",
     "bytes": 1,
@@ -2223,7 +2223,7 @@ const operations = [
     "RTN": "– M(A+Y) → M(A+Y)"
   },
   {
-    "code": 0,
+    "code": "00",
     "shortHand": "NOP",
     "method": "in",
     "bytes": 1,
@@ -2301,7 +2301,7 @@ const operations = [
     "RTN": "A or M(n+Y) → A"
   },
   {
-    "code": 2,
+    "code": "02",
     "shortHand": "ORCC   #Data",
     "method": "im",
     "bytes": 2,
@@ -3276,7 +3276,7 @@ const operations = [
     "RTN": "SP → Y"
   },
   {
-    "code": 9,
+    "code": "09",
     "shortHand": "TSTA",
     "method": "in",
     "bytes": 1,

@@ -92,9 +92,12 @@ export default function Operations(props) {
   const matchesQuery = ops => {
     return ops.filter(op => {
       try {
-        return ((op.shortHand.toUpperCase().search(query) >= 0) ||
-          (op.type.toUpperCase().search(query) >= 0) ||
-          (op.code.toString().toUpperCase().search(`0?${query}`) >= 0));
+        let code = op.code.toString().toUpperCase();
+        return (
+          op.shortHand.toUpperCase().search(query) >= 0 ||
+          op.type.toUpperCase().search(query) >= 0||
+          code.search(`${query}`) >= 0
+        );
       } catch (err) {
         // if the regex breaks:
         setQuery(query.slice(0, -1));
