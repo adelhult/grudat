@@ -1562,7 +1562,7 @@ const operations = [
   {
     "code": "F7",
     "shortHand": "LDA   ,+X",
-    "method": "-x",
+    "method": "+x",
     "bytes": 1,
     "cycles": 4,
     "type": "LD",
