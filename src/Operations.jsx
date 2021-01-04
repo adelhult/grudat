@@ -88,28 +88,33 @@ export default function Operations(props) {
     });
   };
 
+  // clean-up input data
+  const cleanUp = ops => ops.map(op => {
+    op.shortHand = op.shortHand.toUpperCase();
+    op.type = op.type.toUpperCase();
+    op.code = op.code.toString().toUpperCase();
+    return op;
+  });
+
   // filter out operations that does not match the query
-  const matchesQuery = ops => {
-    return ops.filter(op => {
+  const matchesQuery = ops => ops.filter(op => {
       try {
-        let code = op.code.toString().toUpperCase();
         return (
-          op.shortHand.toUpperCase().search(query) >= 0 ||
-          op.type.toUpperCase().search(query) >= 0||
-          code.search(`${query}`) >= 0
+          op.shortHand.search(query) >= 0 ||
+          op.type.search(query) >= 0||
+          op.code.search(query) >= 0
         );
       } catch (err) {
         // if the regex breaks:
         setQuery(query.slice(0, -1));
         return true;
       }
+  });
 
-    });
-  };
+  let ops = cleanUp(props.operations);
+  let tiles = genTiles(matchesQuery(ops));
 
-  let tiles = genTiles(matchesQuery(props.operations));
-
-  return props.operations && <>
+  return ops && <>
     <div id="top"></div>
     <div className="Operations">
       <nav>
