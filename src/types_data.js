@@ -27,13 +27,13 @@ const types = [
         "type": "ASL",
         "name": "Arithmetic shift left",
         "flagInfo": "* N: Kopia av bit 7 efter skiftet. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om C och bit 7 är olika efter operationen, dvs overflow vid 2-komplements-representation inträffar. \n* C: bit 7 före skiftet blir ny carrybit efter skiftet.",
-        "description": "Skiftar operanden ett steg till vänster, dvs. multiplicerar ett tal med eller utan inbyggt tecken med 2. Instruktionen är identisk med LSL. \n\n ![](op_images/l_and_a_shift_left.png)"
+        "description": `Skiftar operanden ett steg till vänster, dvs. multiplicerar ett tal med eller utan inbyggt tecken med 2. Instruktionen är identisk med LSL. \n\n ![](${process.env.PUBLIC_URL}/op_images/l_and_a_shift_left.png)`
     },
     {
         "type": "ASR",
         "name": "Arithmetic shift right",
         "flagInfo": "* N: Ettställs om resultatets teckenbit (bit 7) får värdet 1. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Nollställs. \n* C: bit 0 före skiftet blir ny carrybit efter skiftet.",
-        "description": "Skiftar operanden ett steg till höger, dvs. dividerar tal med inbyggt tecken med 2. \n \n ![](op_images/a_shift_right.png)"
+        "description": `Skiftar operanden ett steg till höger, dvs. dividerar tal med inbyggt tecken med 2. \n \n ![](${process.env.PUBLIC_URL}/op_images/a_shift_right.png)`
     },
     {
         "type": "BCC",
@@ -219,13 +219,13 @@ const types = [
         "type": "LSL",
         "name": "Logical shift left, ASL Arithmetic shift left",
         "flagInfo": "* N: Kopia av bit 7 efter skiftet. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om C och bit 7 är olika efter operationen, dvs overflow vid 2-komplements-representation inträffar. \n* C: bit 7 före skiftet blir ny carrybit efter skiftet.",
-        "description": "Skiftar operanden ett steg till vänster, dvs. multiplicerar ett tal med eller utan inbyggt tecken med 2. Instruktionen är identisk med ASL. \n\n ![](/op_images/l_and_a_shift_left.png)"
+        "description": `Skiftar operanden ett steg till vänster, dvs. multiplicerar ett tal med eller utan inbyggt tecken med 2. Instruktionen är identisk med ASL. \n\n ![](${process.env.PUBLIC_URL}/op_images/l_and_a_shift_left.png)`
     },
     {
         "type": "LSR",
         "name": "Logical shift right",
         "flagInfo": "* N: Nollställs. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om overflow vid 2-komplements-representation inträffar. \n* C: bit 0 före skiftet blir ny carrybit efter skiftet.",
-        "description": "Skiftar operanden ett steg till höger, dvs. dividerar ett tal utan inbyggt tecken med 2. \n \n ![](/op_images/l_shift_right.png)"
+        "description": `Skiftar operanden ett steg till höger, dvs. dividerar ett tal utan inbyggt tecken med 2. \n \n ![](${process.env.PUBLIC_URL}/op_images/l_shift_right.png)`
     },
     {
         "type": "NEG",
@@ -273,13 +273,13 @@ const types = [
         "type": "ROL",
         "name": "Rotate left",
         "flagInfo": "* N: Kopia av bit 7 efter skiftet. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om C och bit 7 är olika efter operationen, dvs overflow vid 2 komplements represen tation inträffar. \n* C: bit 7 före skiftet blir ny carrybit efter skiftet.",
-        "description": "Skiftar operanden ett steg till vänster, dvs. multiplicerar ett tal med eller utan inbyggt tecken med 2. \n\n ![](/op_images/rotate_left.png)"
+        "description": `Skiftar operanden ett steg till vänster, dvs. multiplicerar ett tal med eller utan inbyggt tecken med 2. \n\n ![](${process.env.PUBLIC_URL}/op_images/rotate_left.png)`
     },
     {
         "type": "ROR",
         "name": "Rotate right",
         "flagInfo": "* N: C före skiftoperationen. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om overflow vid 2 komplements representation inträffar. \n* C: bit 0 före skiftet blir ny carrybit efter skiftet.",
-        "description": "Skiftar operanden ett steg till höger, dvs. dividerar ett tal utan inbyggt tecken med 2.\n\n ![](/op_images/rotate_right.png)"
+        "description": `Skiftar operanden ett steg till höger, dvs. dividerar ett tal utan inbyggt tecken med 2.\n\n ![]${process.env.PUBLIC_URL}(/op_images/rotate_right.png)`
     },
     {
         "type": "RTS",
