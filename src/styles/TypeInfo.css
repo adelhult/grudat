@@ -22,6 +22,11 @@
     overflow-x:auto;
 }
 
+.TypeInfo img{
+    max-width:100%;
+    width: 400px;
+}
+
 .TypeInfo th, td, table {
     border:solid;
     border-width: 1px;
