@@ -1185,7 +1185,7 @@ const operations = [
   {
     "code": "DB",
     "shortHand": "EORA   n,Y",
-    "method": "nx",
+    "method": "ny",
     "bytes": 2,
     "cycles": 5,
     "type": "EOR",
@@ -1453,7 +1453,7 @@ const operations = [
     "z": "-",
     "v": "-",
     "c": "-",
-    "RTN": "SP–1 → SP\n PC → M(SP) \n n+X → PC"
+    "RTN": "SP–1 → SP \n PC → M(SP) \n n+Y → PC"
   },
   {
     "code": 84,
@@ -1466,7 +1466,7 @@ const operations = [
     "z": "-",
     "v": "-",
     "c": "-",
-    "RTN": "SP–1 → SP \n PC → M(SP) \n A+X → PC"
+    "RTN": "SP–1 → SP \n PC → M(SP) \n A+Y → PC"
   },
   {
     "code": "F0",
@@ -2354,7 +2354,7 @@ const operations = [
   },
   {
     "code": 13,
-    "shortHand": "PSHC",
+    "shortHand": "PSHCC",
     "method": "in",
     "bytes": 1,
     "cycles": 3,
@@ -2576,7 +2576,7 @@ const operations = [
   {
     "code": "7E",
     "shortHand": "ROR   n,Y",
-    "method": "ax",
+    "method": "ny",
     "bytes": 2,
     "cycles": 4,
     "type": "ROR",
@@ -2589,7 +2589,7 @@ const operations = [
   {
     "code": "8E",
     "shortHand": "ROR   A,Y",
-    "method": "ax",
+    "method": "ay",
     "bytes": 1,
     "cycles": 4,
     "type": "ROR",
@@ -2771,7 +2771,7 @@ const operations = [
   {
     "code": "E7",
     "shortHand": "STA   ,+X",
-    "method": "-x",
+    "method": "+x",
     "bytes": 1,
     "cycles": 4,
     "type": "ST",
@@ -2849,7 +2849,7 @@ const operations = [
   {
     "code": "ED",
     "shortHand": "STA   ,+Y",
-    "method": "-y",
+    "method": "+y",
     "bytes": 1,
     "cycles": 4,
     "type": "ST",

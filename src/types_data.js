@@ -32,7 +32,7 @@ const types = [
     {
         "type": "ASR",
         "name": "Arithmetic shift right",
-        "flagInfo": "* N: Ettställs om resultatets teckenbit (bit 7) får värdet 1. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Nollställs. \n* C: bit 0 före skiftet blir ny carrybit efter skiftet.",
+        "flagInfo": "* N: Ettställs om resultatets teckenbit (bit 7) får värdet 1. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Nollställs. \n* C: Bit 0 före skiftet blir ny carrybit efter skiftet.",
         "description": `Skiftar operanden ett steg till höger, dvs. dividerar tal med inbyggt tecken med 2. \n \n ![](${process.env.PUBLIC_URL}/op_images/a_shift_right.png)`
     },
     {
@@ -111,7 +111,7 @@ const types = [
         "type": "BMI",
         "name": "Branch on minus",
         "flagInfo": "Påverkas ej",
-        "description": "Testar värdet hos Booleska uttrycket NV. Om NV = 1 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnetOm NV = 0 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
+        "description": "Testar N-flaggans värde. Om N=1 utförs ett hopp till adressen ADRESS = PC+Offset. Offset räknas från adressen efter branchinstruktionen, dvs vid uträkningen av hoppadressen pekar PC på operationskoden direkt efter branchinstruktionen i minnet. Om N=0 utförs inget hopp. Nästa instruktion blir i så fall den direkt efter branchinstruktionen i minnet."
     },
     {
         "type": "BNE",
@@ -224,7 +224,7 @@ const types = [
     {
         "type": "LSR",
         "name": "Logical shift right",
-        "flagInfo": "* N: Nollställs. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om overflow vid 2-komplements-representation inträffar. \n* C: bit 0 före skiftet blir ny carrybit efter skiftet.",
+        "flagInfo": "* N: Nollställs. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om overflow vid 2-komplements-representation inträffar. \n* C: Bit 0 före skiftet blir ny carrybit efter skiftet.",
         "description": `Skiftar operanden ett steg till höger, dvs. dividerar ett tal utan inbyggt tecken med 2. \n \n ![](${process.env.PUBLIC_URL}/op_images/l_shift_right.png)`
     },
     {
@@ -266,7 +266,7 @@ const types = [
     {
         "type": "PUL",
         "name": "Pull register from stack",
-        "flagInfo": "Flaggorna påverkas endast vid PULC, då flaggorna får värden från stacken",
+        "flagInfo": "Flaggorna påverkas endast vid PULCC, då flaggorna får värden från stacken",
         "description": "Översta dataordet på stacken läses och placeras i angivet register. Stackpekaren uppdateras sedan"
     },
     {
@@ -278,7 +278,7 @@ const types = [
     {
         "type": "ROR",
         "name": "Rotate right",
-        "flagInfo": "* N: C före skiftoperationen. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om overflow vid 2 komplements representation inträffar. \n* C: bit 0 före skiftet blir ny carrybit efter skiftet.",
+        "flagInfo": "* N: C före skiftoperationen. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Ettställs om overflow vid 2 komplements representation inträffar. \n* C: Bit 0 före skiftet blir ny carrybit efter skiftet.",
         "description": `Skiftar operanden ett steg till höger, dvs. dividerar ett tal utan inbyggt tecken med 2.\n\n ![]${process.env.PUBLIC_URL}(/op_images/rotate_right.png)`
     },
     {
@@ -296,8 +296,8 @@ const types = [
     {
         "type": "SBCA",
         "name": "Subtract with borrow Data from register A",
-        "flagInfo": "* N:Ettställs om resultatets teckenbit (bit 7) få r värdet 1 vid subtraktionen. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll vid subtraktionen. \n* V: Ettställs om overflow vid 2 komplementsrepresentation inträffar vid subtraktionen. \n* C: Ettställs om en lånesiffra = 1 uppstår från bitpositionen l ängst till vänster vid subtraktionen",
-        "description": "Utför åttabitars subtraktion av dataordet i minnet från innehållet i register A r esultatet placeras i reg ister A. En eventuell lånebit (borrow) som uppstår vid subtraktionen placeras i C biten (C flaggan) i CC registret. Det gamla värdet på C biten i flaggregistret används som lånesiffra i minst signifikant position (lånesiffra in) vid subtraktionen."
+        "flagInfo": "* N: Ettställs om resultatets teckenbit (bit 7) får värdet 1 vid subtraktionen. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll vid subtraktionen. \n* V: Ettställs om overflow vid 2 komplementsrepresentation inträffar vid subtraktionen. \n* C: Ettställs om en lånesiffra = 1 uppstår från bitpositionen längst till vänster vid subtraktionen",
+        "description": "Utför åttabitars subtraktion av dataordet i minnet från innehållet i register A, resultatet placeras i register A. En eventuell lånebit (borrow) som uppstår vid subtraktionen placeras i C-biten (C-flaggan) i CC-registret. Det gamla värdet på C-biten i flaggregistret används som lånesiffra i minst signifikant position (lånesiffra in) vid subtraktionen."
     },
     {
         "type": "ST",
@@ -308,19 +308,19 @@ const types = [
     {
         "type": "SUBA",
         "name": "Subtract data from register A",
-        "flagInfo": "* N:Ettställs om resultatets teckenbit (bit 7) får värdet 1 vid subtraktionen. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll vid subtraktionen. \n* V: Ettställs om overflow vid 2 komplementsrepresentation inträffar vid subtraktionen. \n* C: Ettställs om en lånesiffra = 1 uppstår från bitpositionen längst till vänster vid subtraktionen",
-        "description": "Utför åttabitars subtraktion av operanden från innehållet i reg ister A. Resultatet placeras i reg ister A. En eventuell lånebit (borrow) som uppstår vid subtraktionen placeras i C biten (C flaggan) i CC registret. C flaggan representerar i detta fall en lånesiffra vid subtraktion och sätts till inversen av det värde som kommer ut från ALU:n när subtraktionen A - M utförs på det traditionella sättet A + M' + 1"
+        "flagInfo": "* N: Ettställs om resultatets teckenbit (bit 7) får värdet 1 vid subtraktionen. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll vid subtraktionen. \n* V: Ettställs om overflow vid 2 komplementsrepresentation inträffar vid subtraktionen. \n* C: Ettställs om en lånesiffra = 1 uppstår från bitpositionen längst till vänster vid subtraktionen",
+        "description": "Utför åttabitars subtraktion av operanden från innehållet i register A. Resultatet placeras i register A. En eventuell lånebit (borrow) som uppstår vid subtraktionen placeras i C-biten (C-flaggan) i CC-registret. C-flaggan representerar i detta fall en lånesiffra vid subtraktion och sätts till inversen av det värde som kommer ut från ALU:n när subtraktionen A - M utförs på det traditionella sättet A + M' + 1"
     },
     {
         "type": "TFR",
         "name": "Transfer register to register",
-        "flagInfo": "Påverkas ej såvida man inte flyttar ett registerinnehåll till CC registret",
+        "flagInfo": "Påverkas ej såvida man inte flyttar ett registerinnehåll till CC-registret",
         "description": "Data kopieras mellan angivna register"
     },
     {
         "type": "TST",
         "name": "Test",
-        "flagInfo": "* N:Ettställs om resultatets teckenbit (bit 7) får värdet 1. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Nollställs. \n* C: Nol lställs",
+        "flagInfo": "* N: Ettställs om resultatets teckenbit (bit 7) får värdet 1. \n* Z: Ettställs om samtliga åtta bitar i resultatet blir noll. \n* V: Nollställs. \n* C: Nollställs",
         "description": "Låter datavärdet i A eller M passera ALU:n och sätter flaggvipporna N och Z så att man kan avgöra datavärdets tecken eller om det är noll. Endast flaggvipporna påverkas."
     },
 ];
