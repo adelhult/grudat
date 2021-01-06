@@ -261,13 +261,13 @@ const types = [
         "type": "PSH",
         "name": "Push register on Stack",
         "flagInfo": "Påverkas ej",
-        "description": "Stackpekaren uppdateras först. Angivet registerinnehåll skrivs sedan på stacken"
+        "description": "Stackpekaren uppdateras först. Angivet registerinnehåll skrivs sedan på stacken. \n\n **OBS:** det råder tvetydigheter kring huruvida PUSH CC heter *PSHC* (som i simulatorn) eller *PSHCC* (som i manualen)."
     },
     {
         "type": "PUL",
         "name": "Pull register from stack",
         "flagInfo": "Flaggorna påverkas endast vid PULCC, då flaggorna får värden från stacken",
-        "description": "Översta dataordet på stacken läses och placeras i angivet register. Stackpekaren uppdateras sedan"
+        "description": "Översta dataordet på stacken läses och placeras i angivet register. Stackpekaren uppdateras sedan. \n\n **OBS:** det råder tvetydigheter kring huruvida PULL CC heter *PULC* (som i simulatorn) eller *PULCC* (som i manualen)."
     },
     {
         "type": "ROL",
