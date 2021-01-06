@@ -2354,7 +2354,7 @@ const operations = [
   },
   {
     "code": 13,
-    "shortHand": "PSHC",
+    "shortHand": "PSHCC",
     "method": "in",
     "bytes": 1,
     "cycles": 3,
