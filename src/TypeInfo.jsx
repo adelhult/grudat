@@ -60,7 +60,7 @@ export default function TypeInfo(props) {
                     <th>metod</th>
                     <th>OP</th>
                     <th>bytes</th>
-                    <th>kl. cyklar</th>
+                    <th>kl. cykler</th>
                     <th>operation</th>
                     <th>n</th>
                     <th>z</th>
